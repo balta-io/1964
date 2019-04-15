@@ -1,0 +1,30 @@
+<md-dialog aria-label="Adicionar Lista" ng-cloak ng-controller="sideBarCtrl as vm">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Adicionar Lista</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.cancelAddList()">
+                    <md-icon md-svg-src="assets/img/icons/close.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <p>
+                    Você pode adicionar várias listas para organizar melhor suas tarefas.
+                </p>
+                <br><br>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Nome da Lista</label>
+                    <input ng-model="vm.listName" maxlength="20">
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">            
+            <md-button class="md-primary" ng-click="vm.addList()">
+                Salvar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

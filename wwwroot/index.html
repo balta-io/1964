@@ -1,0 +1,72 @@
+<html ng-app="doo" manifest="/app.appcache">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control: max-age=3600, must-revalidate"/>
+    <meta name="description" content="2doo">
+    <title>2doo Task Manager</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico"/>
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="196x196" href="assets/img/touch-icon.png">
+
+    <!-- https://gist.github.com/tfausak/2222823 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">    
+    <meta name="apple-mobile-web-app-title" content="2doo Task Manager">
+    <link rel="apple-touch-startup-image" href="assets/img/splash-screen.png">
+    <link rel="apple-touch-icon" href="assets/img/touch-icon.png">    
+
+    <link rel="stylesheet" href="assets/css/styles-1.0.0.min.css">
+</head>
+
+<div class="splash" id="splash-screen">
+    <p class="text-center">
+        <br>
+        <img src="assets/img/2doo-no-bg.png" class="img-responsive" alt="2doo">
+    </p>
+</div>  
+
+<body layout="column" ng-cloak>
+    <section layout="row" flex ng-controller="sideBarCtrl as vm">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar>
+                <h1 class="md-toolbar-tools">2doo</h1>
+            </md-toolbar>
+            <md-content>
+                <md-subheader class="md-no-sticky">Minhas Listas</md-subheader>
+                <md-list-item href="#/todos/{{ TodoLists.indexOf(list) }}" ng-click="vm.close()" ng-repeat="list in TodoLists | orderBy: 'title'">
+                    <p>{{ list.title }}</p>
+                </md-list-item>
+            </md-content>
+            <br>
+            <div layout="row" layout-align="center center">
+                <md-button md-no-ink class="md-primary" ng-click="vm.showAddList()">Nova Lista</md-button>
+            </div>
+        </md-sidenav>
+        <md-content flex>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.toggle()" hide-gt-md>
+                        <md-icon md-svg-icon="assets/img/icons/menu.svg"></md-icon>
+                    </md-button>
+                    <h2 class="hide-gt-md">2doo</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="More" ng-click="vm.showBottomMenu()">
+                        <md-icon md-svg-icon="assets/img/icons/more.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <div ng-view></div>
+        </md-content>
+    </section>
+    
+    <script src="assets/js/scripts-1.0.0.min.js"></script>
+    <script src="assets/js/app-1.0.0.min.js"></script>    
+</body>
+
+</html>

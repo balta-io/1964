@@ -1,0 +1,37 @@
+<md-content class="md-padding" layout="column">
+    <md-list ng-cloak>
+        <md-subheader class="md-no-sticky">{{ TodoLists[vm.index].title }}</md-subheader>
+        <md-list-item ng-repeat="item in TodoLists[vm.index].todos | orderBy: vm.order">
+            <p ng-class="{ 'done': item.done }">{{ item.title }}</p>
+            <md-checkbox class="md-secondary" ng-model="item.done" ng-click="vm.save()" aria-label="Status"></md-checkbox>
+        </md-list-item>
+    </md-list>
+
+    <br>
+    <br>
+
+    <div layout="row" layout-align="center center">
+        <md-button md-no-ink class="md-primary" ng-click="vm.showAddDialog()">Nova Tarefa</md-button>
+    </div>
+
+    <div layout="row" layout-align="end end">
+        <md-fab-speed-dial md-open="true" class="md-fling" md-direction="up">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Menu</md-tooltip>
+                    <md-icon md-svg-src="assets/img/icons/menu.svg"></md-icon>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="vm.changeOrder('title')">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Ordenar por Nome</md-tooltip>
+                    <md-icon md-svg-src="assets/img/icons/alphabetical.svg" aria-label="Ordem Alfabética"></md-icon>
+                </md-button>
+                <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="vm.changeOrder('done')">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Ordenar por Conclusão</md-tooltip>
+                    <md-icon md-svg-src="assets/img/icons/check.svg" aria-label="Ordenar por Conclusão"></md-icon>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+    </div>
+</md-content>
