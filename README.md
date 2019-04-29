@@ -1,7 +1,14 @@
-## 1964 - Criando Aplicações Híbridas ##
-Neste curso, vamos aprender a criar aplicações híbridas, que funcionam no desktop, browser e mobile.
+# 1964 - Criando Aplicações Híbridas #
+Repositório do curso **Criando Aplicações Híbridas** da plataforma https://balta.io.
 
-### Conteúdo Programático ###
+Autor: André Baltieri
+
+Link: https://balta.io/cursos/1964
+
+## Projeto construído com: ##
+* TypeScript
+
+## Conteúdo Programático ##
 * Aula 1 - Bem vindo ao Curso
 * Aula 2 - Instalando as Ferramentas
 * Aula 3 - Iniciando a aplicação
@@ -21,7 +28,7 @@ Neste curso, vamos aprender a criar aplicações híbridas, que funcionam no des
 * Aula 17 - Criando a aplicação Desktop (Vídeo)
 * Aula 18 - Resumo
 
-### Assine o Site ###
-Faça este e outros treinamentos por apenas R$ 59,90 mensais! Cancele quando quiser e ainda desfrute de treinamentos mensais online, ao vivo e de graça!
+---
+balta.io - Develop Your Career
 
-http://assine.andrebaltieri.net/
+Conheça todos os cursos da plataforma em https://balta.io/cursos
